@@ -1,7 +1,7 @@
 // Arduino Moving Average Library
 // https://github.com/JChristensen/movingAvg
 // Copyright (C) 2018 by Jack Christensen and licensed under
-// GNU GPL v3.0, https://www.gnu.org/licenses/gpl.html
+// GNU GPL v3.0, https://www.gnu.org/licenses/gpl.html 
 
 #ifndef MOVINGAVG_H_INCLUDED
 #define MOVINGAVG_H_INCLUDED
@@ -14,9 +14,11 @@ class movingAvg
         void begin();
         int reading(int newReading);
         int getAvg();
+        float getAvgF();
         int getCount() {return m_nbrReadings;}
         void reset();
         int* getReadings() {return m_readings;}
+		long getSum() {return m_sum;}
 
     private:
         int m_interval;     // number of data points for the moving average

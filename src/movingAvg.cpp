@@ -1,7 +1,7 @@
 // Arduino Moving Average Library
 // https://github.com/JChristensen/movingAvg
 // Copyright (C) 2018 by Jack Christensen and licensed under
-// GNU GPL v3.0, https://www.gnu.org/licenses/gpl.html
+// GNU GPL v3.0, https://www.gnu.org/licenses/gpl.html 
 
 #include <movingAvg.h>
 
@@ -35,6 +35,12 @@ int movingAvg::reading(int newReading)
 int movingAvg::getAvg()
 {
     return (m_sum + m_nbrReadings / 2) / m_nbrReadings;
+}
+
+float movingAvg::getAvgF()
+{
+	//return (m_sum + m_nbrReadings / 2) / (float)m_nbrReadings;
+    return m_sum / (float)m_nbrReadings;
 }
 
 // start the moving average over again
